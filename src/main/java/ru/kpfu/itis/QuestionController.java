@@ -27,6 +27,7 @@ public class QuestionController implements Initializable {
     @FXML
     private TextField answer;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         File file = new File("src/main/assets/img/1question.png");
