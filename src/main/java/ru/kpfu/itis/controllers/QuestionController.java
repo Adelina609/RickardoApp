@@ -1,4 +1,4 @@
-package ru.kpfu.itis;
+package ru.kpfu.itis.controllers;
 
 
 import javafx.fxml.FXML;
@@ -8,11 +8,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+@Component
 public class QuestionController implements Initializable {
 
     @FXML
