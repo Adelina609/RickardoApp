@@ -18,7 +18,7 @@ public class Main extends Application {
     @Override
     public void init() throws Exception {
         springContext = SpringApplication.run(Main.class);
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/question.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/home.fxml"));
         fxmlLoader.setControllerFactory(springContext::getBean);
         root = fxmlLoader.load();
     }
@@ -27,7 +27,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception{
         // установка надписи
 //        Parent root = FXMLLoader.load(getClass().getResource("/view/fxml/question.fxml"));
-        stage.setTitle("JavaFX Maven Spring");
+        stage.setTitle("Игра");
         stage.setScene(new Scene(root));
         stage.show();
     }
