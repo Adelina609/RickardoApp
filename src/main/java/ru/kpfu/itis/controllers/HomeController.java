@@ -35,6 +35,8 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //Кнопка "Начать игру" (предлагайте смешные альтернативы)
+        //Пока без сохранений, да?
         beginButton.setOnAction(event -> {
             beginButton.getScene().getWindow().hide();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/question.fxml"));
@@ -48,8 +50,8 @@ public class HomeController implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
+        //Кнопка "Выход"
         exitButton.setOnAction(event -> {
             exit(0);
         });

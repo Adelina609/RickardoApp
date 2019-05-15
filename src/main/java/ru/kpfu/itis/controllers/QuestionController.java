@@ -63,11 +63,12 @@ public class QuestionController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        //Подгружаем картинку (надо будет создать отдельный метод для этого)
         File file = new File("src/main/assets/img/1question.png");
         Image image = new Image(file.toURI().toString());
         imageView.setImage(image);
 
+        //Кнопка 'del' правее от букв, удаляет последний символ в строке
         deleteLast.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -75,6 +76,7 @@ public class QuestionController implements Initializable {
             }
         });
 
+        //Возвращение в главное меню, правый верхний угол игрового экрана
         menuButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -95,6 +97,8 @@ public class QuestionController implements Initializable {
 
         });
 
+        //Кнопка "Проверить" с подтверждением ответа, поверх игрового, появляется модальное окно
+        //надо внутри использовать метод с проверкой слова и только потом выбрать, какое модальное окно отразить
         submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -114,11 +118,12 @@ public class QuestionController implements Initializable {
             }
             });
 
+        //Наша клавиатура
         letters = new Button[] {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8,
                 letter9, letter10, letter11, letter12, letter13, letter14, letter15, letter16,
                 letter17, letter18, letter19, letter20, letter21, letter22, letter23, letter24,
                 letter25, letter26, letter27, letter28, letter29, letter30, letter31, letter32};
-
+        //абилки для нашей клавиатуры
         for (Button but : letters) {
             but.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override

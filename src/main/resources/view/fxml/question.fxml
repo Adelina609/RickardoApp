@@ -23,10 +23,11 @@
    <top>
       <BorderPane>
          <left>
+
             <Label text="Уровень N"></Label>
          </left>
          <center>
-            <Label text="Этап N"></Label>
+            <Label  text="Вопрос N"></Label>
          </center>
          <right>
             <Button fx:id="menuButton" text="МЕНЮ"></Button>
