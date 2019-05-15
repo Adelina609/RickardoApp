@@ -1,0 +1,6 @@
+#picture {
+    -fx-fill-width: 400;
+    -fx-fill-height: 400;
+    -fx-pref-height: 500;
+    -fx-pref-width: 500;
+}

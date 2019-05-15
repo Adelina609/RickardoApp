@@ -179,6 +179,7 @@
               <directory>src/main/resources</directory>
               <includes>
                   <include>**/*.fxml</include>
+                  <include>**/*.css</include>
               </includes>
           </resource>
       </resources>

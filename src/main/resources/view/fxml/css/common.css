@@ -1,0 +1,12 @@
+#base {
+    -fx-min-width: 800;
+    -fx-min-height: 800;
+    -fx-background-color: #181e2b;
+    -fx-font-size: 28;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+#centered {
+    -fx-alignment: center;
+}

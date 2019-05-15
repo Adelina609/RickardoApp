@@ -1,0 +1,11 @@
+#modal{
+    -fx-background-insets: -20, -10;
+    -fx-background-image: url("//main//assets//img//rickardo.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover, auto;
+    -fx-min-width: 400;
+    -fx-min-height: 400;
+    -fx-background-color: #181e2b;
+    -fx-font-size: 28;
+}

@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 import static java.lang.System.exit;
 
 @Component
-public class HomeController implements Initializable {
+public class ModalController implements Initializable {
 
     @Autowired
     ConfigurableApplicationContext springContext;
@@ -28,30 +28,17 @@ public class HomeController implements Initializable {
     private Label TitleLabel;
 
     @FXML
-    private Button beginButton;
-
-    @FXML
-    private Button exitButton;
+    private Button actionButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        beginButton.setOnAction(event -> {
-            beginButton.getScene().getWindow().hide();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/question.fxml"));
-            fxmlLoader.setControllerFactory(springContext::getBean);
-            try {
-                Parent root = fxmlLoader.load();
-                Stage stage = new Stage();
-                stage.setTitle("Игра началась!");
-                stage.setScene(new Scene(root));
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
+        actionButton.setOnAction(event -> {
+            if (actionButton.getText().equals("Еще раз")) {
+                actionButton.getScene().getWindow().hide();
             }
-
-        });
-        exitButton.setOnAction(event -> {
-            exit(0);
+            else {
+                actionButton.getScene().getWindow().hide();
+            }
         });
     }
 }
