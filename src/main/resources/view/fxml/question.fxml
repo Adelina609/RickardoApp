@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
-
-<AnchorPane fx:controller="ru.kpfu.itis.QuestionController"
+<AnchorPane fx:controller="ru.kpfu.itis.controllers.QuestionController"
             fx:id="background" maxHeight="-Infinity"
             maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="570.0"
             prefWidth="570.0" style="-fx-background-color: #181e2b;"
             xmlns:fx="http://javafx.com/fxml">
-   <children>
-      <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="313.0" layoutX="135.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
-      </ImageView>
-      <AnchorPane layoutX="-1.0" prefHeight="66.0" prefWidth="570.0" style="-fx-background-color: #fafafa;" />
-      <Button fx:id="answerButton" layoutX="214.0" layoutY="492.0"
-              mnemonicParsing="false" prefHeight="35.0"
-              prefWidth="142.0" style="-fx-background-color: #006400;"
-              text="готово" textFill="WHITE">
-         <font>
-            <Font name="Courier New Bold" size="20.0" />
-         </font>
-      </Button>
-      <TextField fx:id="answer" layoutX="149.0" layoutY="435.0" prefHeight="26.0" prefWidth="281.0" />
-   </children>
+    <children>
+        <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="313.0" layoutX="135.0" layoutY="104.0"
+                   pickOnBounds="true" preserveRatio="true">
+        </ImageView>
+        <AnchorPane layoutX="-1.0" prefHeight="66.0" prefWidth="570.0" style="-fx-background-color: #fafafa;"/>
+        <Button fx:id="answerButton" layoutX="214.0" layoutY="492.0"
+                mnemonicParsing="false" prefHeight="35.0"
+                prefWidth="142.0" style="-fx-background-color: #006400;"
+                text="готово" textFill="WHITE">
+            <font>
+                <Font name="Courier New Bold" size="20.0"/>
+            </font>
+        </Button>
+        <TextField fx:id="answer" layoutX="149.0" layoutY="435.0" prefHeight="26.0" prefWidth="281.0"/>
+    </children>
 </AnchorPane>
