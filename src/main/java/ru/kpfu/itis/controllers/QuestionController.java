@@ -9,17 +9,26 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+
 import javafx.scene.layout.GridPane;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import ru.kpfu.itis.client.HelloService;
+
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
+
 
 import java.awt.*;
 import java.io.File;
@@ -29,6 +38,12 @@ import java.util.ResourceBundle;
 
 @Component
 public class QuestionController implements Initializable {
+    private static final Logger log = LoggerFactory.getLogger(QuestionController.class);
+
+    private HelloService helloService = new HelloService();
+
+    @Autowired
+    ConfigurableApplicationContext springContext;
 
     @Autowired
     ConfigurableApplicationContext springContext;
@@ -37,6 +52,7 @@ public class QuestionController implements Initializable {
     private ImageView imageView;
 
     @FXML
+
     private Button submitButton, deleteLast, menuButton, level, stage;
 
     @FXML
@@ -44,6 +60,12 @@ public class QuestionController implements Initializable {
 
     @FXML
     private Button[] letters;
+
+    private TextField answer;
+
+    @FXML
+    private Label messageLabel;
+
 
     @FXML
     private Button letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8,
@@ -70,9 +92,49 @@ public class QuestionController implements Initializable {
         Image image = new Image(file.toURI().toString());
         imageView.setImage(image);
 
+
         setLevel(lvl);
         setStage(stg);
         clearAnswerField();
+
+        answerButton.setOnAction(event -> {
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            Parent newWindow;
+            try {
+                //указать путь к новому окошку с рикардо
+                newWindow = FXMLLoader.load(getClass().getResource("/view/fxml/home.fxml"));
+                Scene scene = new Scene(newWindow);
+                stage.setScene(scene);
+                stage.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @FXML
+    private void check(){
+        messageLabel.setText("");
+        helloService.setName(answer.getText());
+
+        helloService.setOnSucceeded(event -> {
+            if (helloService.getValue().equals("true")){
+                //вызов успешного модального окна
+            } else{
+                //вызов неуспешного модального окна
+            }
+        });
+
+        helloService.setOnFailed(event ->
+                log.error(
+                        "Unable to say hello to " +
+                                helloService.getException()
+                )
+        );
+
+        helloService.restart();
+
     }
 
     @Override
