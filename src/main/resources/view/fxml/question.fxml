@@ -8,6 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
+<?import javafx.scene.control.Label?>
 <AnchorPane fx:controller="ru.kpfu.itis.controllers.QuestionController"
             fx:id="background" maxHeight="-Infinity"
             maxWidth="-Infinity" minHeight="-Infinity"
@@ -18,7 +19,7 @@
       <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="313.0" layoutX="135.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
       </ImageView>
       <AnchorPane layoutX="-1.0" prefHeight="66.0" prefWidth="570.0" style="-fx-background-color: #fafafa;" />
-      <Button fx:id="answerButton" layoutX="214.0" layoutY="492.0"
+      <Button onAction="#check"  layoutX="214.0" layoutY="492.0"
               mnemonicParsing="false" prefHeight="35.0"
               prefWidth="142.0" style="-fx-background-color: #006400;"
               text="готово" textFill="WHITE">
@@ -26,6 +27,7 @@
             <Font name="Courier New Bold" size="20.0" />
          </font>
       </Button>
+      <Label fx:id="messageLabel"/>
       <TextField fx:id="answer" layoutX="149.0" layoutY="435.0" prefHeight="26.0" prefWidth="281.0" />
    </children>
 </AnchorPane>

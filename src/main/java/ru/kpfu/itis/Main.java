@@ -5,9 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import ru.kpfu.itis.server.HelloServer;
+
+import javax.websocket.DeploymentException;
 
 @SpringBootApplication
 public class Main extends Application {
@@ -15,8 +20,16 @@ public class Main extends Application {
     private ConfigurableApplicationContext springContext;
     private Parent root;
 
+    private static final Logger log = LoggerFactory.getLogger(Main.class);
+
+    private static final String MAIN_FXML_FILE = "/fxml/hello.fxml";
+
+    private HelloServer server;
+
     @Override
     public void init() throws Exception {
+        server = new HelloServer();
+        server.start();
         springContext = SpringApplication.run(Main.class);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/home.fxml"));
         fxmlLoader.setControllerFactory(springContext::getBean);
@@ -25,16 +38,18 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
-        // установка надписи
-//        Parent root = FXMLLoader.load(getClass().getResource("/view/fxml/question.fxml"));
+        log.info("Starting Hello JavaFX WebSocket demonstration application");
+        log.debug("Loading FXML for main view");
+
         stage.setTitle("Игра");
         stage.setScene(new Scene(root));
         stage.show();
     }
 
     @Override
-    public void stop() throws Exception {
+    public void stop() throws Exception, DeploymentException {
         springContext.stop();
+        server.stop();
     }
 
 
