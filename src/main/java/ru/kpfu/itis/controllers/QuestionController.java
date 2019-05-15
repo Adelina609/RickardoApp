@@ -34,22 +34,13 @@ public class QuestionController implements Initializable {
     ConfigurableApplicationContext springContext;
 
     @FXML
-    private AnchorPane background;
-
-    @FXML
     private ImageView imageView;
 
     @FXML
-    private Button submitButton;
-
-    @FXML
-    private Button deleteLast;
+    private Button submitButton, deleteLast, menuButton, level, stage;
 
     @FXML
     private TextField answerField;
-
-    @FXML
-    private Button menuButton;
 
     @FXML
     private Button[] letters;
@@ -60,13 +51,34 @@ public class QuestionController implements Initializable {
             letter17, letter18, letter19, letter20, letter21, letter22, letter23, letter24,
             letter25, letter26, letter27, letter28, letter29, letter30, letter31, letter32;
 
+    //Устанавливаем надпись с номером уровня
+    private void setLevel (int lvl) {
+        level.setText("Уровень " + lvl);
+    }
+    //Устанавливаем надпись с номером этапа
+    private void setStage (int stg) {
+        stage.setText("Этап " + stg);
+    }
+    //Опустошить поле ввода (когда рестартается уровень, например)
+    private void clearAnswerField () {
+        answerField.setText("");
+    }
+
+    private void update(int lvl, int stg) {
+        //Тут взависимости от lvl и stg грузим нужную картинку и слово из массива
+        File file = new File("src/main/assets/img/1question.png");
+        Image image = new Image(file.toURI().toString());
+        imageView.setImage(image);
+
+        setLevel(lvl);
+        setStage(stg);
+        clearAnswerField();
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //Подгружаем картинку (надо будет создать отдельный метод для этого)
-        File file = new File("src/main/assets/img/1question.png");
-        Image image = new Image(file.toURI().toString());
-        imageView.setImage(image);
+        update(1, 1);
 
         //Кнопка 'del' правее от букв, удаляет последний символ в строке
         deleteLast.setOnMouseClicked(new EventHandler<MouseEvent>() {

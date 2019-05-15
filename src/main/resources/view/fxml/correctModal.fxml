@@ -18,7 +18,7 @@
     <bottom>
         <BorderPane>
             <center>
-                <Button fx:id="actionButton" text="След" id="menu_button"></Button>
+                <Button fx:id="actionButton" text="я молорик" id="menu_button"></Button>
             </center>
         </BorderPane>
 

@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f9a55100-2a2e-4142-b0ab-dbbb35586697" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/ModalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/ModalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/fxml/css/wrong.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/fxml/css/wrong.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/fxml/correctModal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/fxml/correctModal.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/fxml/question.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/fxml/question.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/fxml/wrongModal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/fxml/wrongModal.fxml" afterDir="false" />
     </list>
@@ -20,21 +20,18 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/ModalController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/QuestionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="33" column="49" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+            <state relative-caret-position="-491">
+              <caret line="50" column="86" selection-start-line="50" selection-start-column="86" selection-end-line="50" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1630#1631#0" expanded="true" />
+                <element signature="e#1650#1651#0" expanded="true" />
+                <element signature="e#1771#1772#0" expanded="true" />
+                <element signature="e#1791#1792#0" expanded="true" />
+                <element signature="e#1954#1955#0" expanded="true" />
+                <element signature="e#1980#1981#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,8 +40,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/view/fxml/question.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="24" column="15" lean-forward="true" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+            <state relative-caret-position="305">
+              <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/ModalController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/view/fxml/wrongModal.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/view/fxml/correctModal.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -86,15 +112,15 @@
         <option value="$PROJECT_DIR$/src/main/resources/view/fxml/css/home.css" />
         <option value="$PROJECT_DIR$/src/main/resources/view/fxml/css/question.css" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/OpenModalDialogController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/ModalController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/view/fxml/correctModal.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/view/fxml/css/common.css" />
         <option value="$PROJECT_DIR$/src/main/resources/view/fxml/css/correct.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/view/fxml/wrongModal.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/view/fxml/css/wrong.css" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/fxml/question.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/QuestionController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/view/fxml/wrongModal.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/view/fxml/correctModal.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/ModalController.java" />
       </list>
     </option>
   </component>
@@ -117,10 +143,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="50" />
-    <option name="y" value="24" />
-    <option name="width" value="869" />
-    <option name="height" value="1044" />
+    <option name="x" value="641" />
+    <option name="y" value="144" />
+    <option name="width" value="1056" />
+    <option name="height" value="1043" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -231,7 +257,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557915536881" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557916740403" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/javafx" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -299,7 +325,7 @@
       <workItem from="1557676824889" duration="7015000" />
       <workItem from="1557769140603" duration="451000" />
       <workItem from="1557830792037" duration="9592000" />
-      <workItem from="1557856431189" duration="41002000" />
+      <workItem from="1557856431189" duration="42285000" />
     </task>
     <task id="LOCAL-00001" summary="puff">
       <created>1557831360573</created>
@@ -322,11 +348,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557913794993</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Добавлены черновые варианты окошек (дизайн будет менятся, кнопки останутся такими), добавлен функционал некоторым кнопкам.">
+      <created>1557915379366</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1557915379366</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Добавлены черновые варианты окошек (дизайн будет менятся, кнопки останутся такими), добавлен функционал некоторым кнопкам.">
+      <created>1557915541761</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1557915541761</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58060000" />
+    <option name="totallyTimeSpent" value="59343000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -359,7 +399,7 @@
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
       <window_info anchor="bottom" id="Spring" order="9" sideWeight="0.4997236" weight="0.3294979" />
-      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.8512173" visible="true" weight="0.16945606" />
+      <window_info active="true" anchor="bottom" id="Run" order="10" sideWeight="0.8512173" visible="true" weight="0.16945606" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.39853558" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
@@ -491,33 +531,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/fxml/correctModal.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="22" column="15" selection-start-line="11" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/fxml/wrongModal.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/fxml/css/correct.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="10" column="1" lean-forward="true" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/fxml/css/wrong.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -530,26 +547,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/fxml/question.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="24" column="15" lean-forward="true" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+        <state relative-caret-position="305">
+          <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/ModalController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/view/fxml/css/wrong.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        <state relative-caret-position="310">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/view/fxml/wrongModal.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/view/fxml/correctModal.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/QuestionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="33" column="49" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+        <state relative-caret-position="-491">
+          <caret line="50" column="86" selection-start-line="50" selection-start-column="86" selection-end-line="50" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1630#1631#0" expanded="true" />
+            <element signature="e#1650#1651#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
+            <element signature="e#1791#1792#0" expanded="true" />
+            <element signature="e#1954#1955#0" expanded="true" />
+            <element signature="e#1980#1981#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/itis/controllers/ModalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
         </state>
       </provider>
     </entry>
