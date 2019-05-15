@@ -12,7 +12,8 @@ public class Utils {
     //TODO захардкодить вопросы
 
     public static List<Question> fillQuestions(){
-//        questions.add();
+
+        questions.add(new Question("", "answer"));
         return questions;
     }
 }

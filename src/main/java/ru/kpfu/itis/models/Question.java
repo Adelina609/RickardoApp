@@ -40,4 +40,9 @@ public class Question {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
+
+    public Question(@NotNull String img, @NotNull String answer) {
+        this.img = img;
+        this.answer = answer;
+    }
 }

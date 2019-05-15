@@ -45,9 +45,6 @@ public class QuestionController implements Initializable {
     @Autowired
     ConfigurableApplicationContext springContext;
 
-    @Autowired
-    ConfigurableApplicationContext springContext;
-
     @FXML
     private ImageView imageView;
 
@@ -61,6 +58,7 @@ public class QuestionController implements Initializable {
     @FXML
     private Button[] letters;
 
+    @FXML
     private TextField answer;
 
     @FXML
@@ -97,20 +95,20 @@ public class QuestionController implements Initializable {
         setStage(stg);
         clearAnswerField();
 
-        answerButton.setOnAction(event -> {
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            Parent newWindow;
-            try {
-                //указать путь к новому окошку с рикардо
-                newWindow = FXMLLoader.load(getClass().getResource("/view/fxml/home.fxml"));
-                Scene scene = new Scene(newWindow);
-                stage.setScene(scene);
-                stage.showAndWait();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+//        answerButton.setOnAction(event -> {
+//            Stage stage = new Stage();
+//            stage.initModality(Modality.APPLICATION_MODAL);
+//            Parent newWindow;
+//            try {
+//                //указать путь к новому окошку с рикардо
+//                newWindow = FXMLLoader.load(getClass().getResource("/view/fxml/home.fxml"));
+//                Scene scene = new Scene(newWindow);
+//                stage.setScene(scene);
+//                stage.showAndWait();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        });
     }
 
     @FXML

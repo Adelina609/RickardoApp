@@ -34,104 +34,101 @@
    </top>
    <center>
       <VBox id="centered">
-      <ImageView fx:id="imageView" id="picture" fitHeight="400" fitWidth="400">
-      </ImageView>
-      <Button fx:id="submitButton" text="Проверить"> </Button>
-      <TextField fx:id="answerField" prefWidth="100" text=""></TextField>
-      <BorderPane>
-         <center>
-      <GridPane fx:id="lettersPane" id="centered">
-         <Button GridPane.columnIndex="1" GridPane.rowIndex="1"  fx:id="letter1" text="А"></Button>
-         <Button GridPane.columnIndex="2" GridPane.rowIndex="1"  fx:id="letter2" text="Б"></Button>
-         <Button GridPane.columnIndex="3" GridPane.rowIndex="1"  fx:id="letter3" text="В"></Button>
-         <Button GridPane.columnIndex="4" GridPane.rowIndex="1"  fx:id="letter4" text="Г"></Button>
-         <Button GridPane.columnIndex="5" GridPane.rowIndex="1"  fx:id="letter5" text="Д"></Button>
-         <Button GridPane.columnIndex="6" GridPane.rowIndex="1"  fx:id="letter6" text="Е"></Button>
-         <Button GridPane.columnIndex="7" GridPane.rowIndex="1"  fx:id="letter7" text="Ж"></Button>
-         <Button GridPane.columnIndex="8" GridPane.rowIndex="1"  fx:id="letter8" text="З"></Button>
+         <ImageView fx:id="imageView" id="picture" fitHeight="400" fitWidth="400">
+         </ImageView>
+         <Button fx:id="submitButton" text="Проверить"> </Button>
+         <TextField fx:id="answerField" prefWidth="100" text=""></TextField>
+         <BorderPane>
+            <center>
+               <GridPane fx:id="lettersPane" id="centered">
+                  <Button GridPane.columnIndex="1" GridPane.rowIndex="1"  fx:id="letter1" text="А"></Button>
+                  <Button GridPane.columnIndex="2" GridPane.rowIndex="1"  fx:id="letter2" text="Б"></Button>
+                  <Button GridPane.columnIndex="3" GridPane.rowIndex="1"  fx:id="letter3" text="В"></Button>
+                  <Button GridPane.columnIndex="4" GridPane.rowIndex="1"  fx:id="letter4" text="Г"></Button>
+                  <Button GridPane.columnIndex="5" GridPane.rowIndex="1"  fx:id="letter5" text="Д"></Button>
+                  <Button GridPane.columnIndex="6" GridPane.rowIndex="1"  fx:id="letter6" text="Е"></Button>
+                  <Button GridPane.columnIndex="7" GridPane.rowIndex="1"  fx:id="letter7" text="Ж"></Button>
+                  <Button GridPane.columnIndex="8" GridPane.rowIndex="1"  fx:id="letter8" text="З"></Button>
 
-         <Button GridPane.columnIndex="1" GridPane.rowIndex="2"  fx:id="letter9" text="И"></Button>
-         <Button GridPane.columnIndex="2" GridPane.rowIndex="2"  fx:id="letter10" text="Й"></Button>
-         <Button GridPane.columnIndex="3" GridPane.rowIndex="2"  fx:id="letter11" text="К"></Button>
-         <Button GridPane.columnIndex="4" GridPane.rowIndex="2"  fx:id="letter12" text="Л"></Button>
-         <Button GridPane.columnIndex="5" GridPane.rowIndex="2"  fx:id="letter13" text="М"></Button>
-         <Button GridPane.columnIndex="6" GridPane.rowIndex="2"  fx:id="letter14" text="Н"></Button>
-         <Button GridPane.columnIndex="7" GridPane.rowIndex="2"  fx:id="letter15" text="О"></Button>
-         <Button GridPane.columnIndex="8" GridPane.rowIndex="2"  fx:id="letter16" text="П"></Button>
+                  <Button GridPane.columnIndex="1" GridPane.rowIndex="2"  fx:id="letter9" text="И"></Button>
+                  <Button GridPane.columnIndex="2" GridPane.rowIndex="2"  fx:id="letter10" text="Й"></Button>
+                  <Button GridPane.columnIndex="3" GridPane.rowIndex="2"  fx:id="letter11" text="К"></Button>
+                  <Button GridPane.columnIndex="4" GridPane.rowIndex="2"  fx:id="letter12" text="Л"></Button>
+                  <Button GridPane.columnIndex="5" GridPane.rowIndex="2"  fx:id="letter13" text="М"></Button>
+                  <Button GridPane.columnIndex="6" GridPane.rowIndex="2"  fx:id="letter14" text="Н"></Button>
+                  <Button GridPane.columnIndex="7" GridPane.rowIndex="2"  fx:id="letter15" text="О"></Button>
+                  <Button GridPane.columnIndex="8" GridPane.rowIndex="2"  fx:id="letter16" text="П"></Button>
 
-         <Button GridPane.columnIndex="1" GridPane.rowIndex="3"  fx:id="letter17" text="Р"></Button>
-         <Button GridPane.columnIndex="2" GridPane.rowIndex="3"  fx:id="letter18" text="С"></Button>
-         <Button GridPane.columnIndex="3" GridPane.rowIndex="3"  fx:id="letter19" text="Т"></Button>
-         <Button GridPane.columnIndex="4" GridPane.rowIndex="3"  fx:id="letter20" text="У"></Button>
-         <Button GridPane.columnIndex="5" GridPane.rowIndex="3"  fx:id="letter21" text="Ф"></Button>
-         <Button GridPane.columnIndex="6" GridPane.rowIndex="3"  fx:id="letter22" text="Х"></Button>
-         <Button GridPane.columnIndex="7" GridPane.rowIndex="3"  fx:id="letter23" text="Ц"></Button>
-         <Button GridPane.columnIndex="8" GridPane.rowIndex="3"  fx:id="letter24" text="Ч"></Button>
+                  <Button GridPane.columnIndex="1" GridPane.rowIndex="3"  fx:id="letter17" text="Р"></Button>
+                  <Button GridPane.columnIndex="2" GridPane.rowIndex="3"  fx:id="letter18" text="С"></Button>
+                  <Button GridPane.columnIndex="3" GridPane.rowIndex="3"  fx:id="letter19" text="Т"></Button>
+                  <Button GridPane.columnIndex="4" GridPane.rowIndex="3"  fx:id="letter20" text="У"></Button>
+                  <Button GridPane.columnIndex="5" GridPane.rowIndex="3"  fx:id="letter21" text="Ф"></Button>
+                  <Button GridPane.columnIndex="6" GridPane.rowIndex="3"  fx:id="letter22" text="Х"></Button>
+                  <Button GridPane.columnIndex="7" GridPane.rowIndex="3"  fx:id="letter23" text="Ц"></Button>
+                  <Button GridPane.columnIndex="8" GridPane.rowIndex="3"  fx:id="letter24" text="Ч"></Button>
 
-         <Button GridPane.columnIndex="1" GridPane.rowIndex="4"  fx:id="letter25" text="Ш"></Button>
-         <Button GridPane.columnIndex="2" GridPane.rowIndex="4"  fx:id="letter26" text="Щ"></Button>
-         <Button GridPane.columnIndex="3" GridPane.rowIndex="4"  fx:id="letter27" text="Ъ"></Button>
-         <Button GridPane.columnIndex="4" GridPane.rowIndex="4"  fx:id="letter28" text="Ы"></Button>
-         <Button GridPane.columnIndex="5" GridPane.rowIndex="4"  fx:id="letter29" text="Ь"></Button>
-         <Button GridPane.columnIndex="6" GridPane.rowIndex="4"  fx:id="letter30" text="Э"></Button>
-         <Button GridPane.columnIndex="7" GridPane.rowIndex="4"  fx:id="letter31" text="Ю"></Button>
-         <Button GridPane.columnIndex="8" GridPane.rowIndex="4"  fx:id="letter32" text="Я"></Button>
+                  <Button GridPane.columnIndex="1" GridPane.rowIndex="4"  fx:id="letter25" text="Ш"></Button>
+                  <Button GridPane.columnIndex="2" GridPane.rowIndex="4"  fx:id="letter26" text="Щ"></Button>
+                  <Button GridPane.columnIndex="3" GridPane.rowIndex="4"  fx:id="letter27" text="Ъ"></Button>
+                  <Button GridPane.columnIndex="4" GridPane.rowIndex="4"  fx:id="letter28" text="Ы"></Button>
+                  <Button GridPane.columnIndex="5" GridPane.rowIndex="4"  fx:id="letter29" text="Ь"></Button>
+                  <Button GridPane.columnIndex="6" GridPane.rowIndex="4"  fx:id="letter30" text="Э"></Button>
+                  <Button GridPane.columnIndex="7" GridPane.rowIndex="4"  fx:id="letter31" text="Ю"></Button>
+                  <Button GridPane.columnIndex="8" GridPane.rowIndex="4"  fx:id="letter32" text="Я"></Button>
 
 
 
-      </GridPane></center>
-         <right>
-            <BorderPane>
-               <center>
-            <Button fx:id="deleteLast" text="del"></Button>
-               </center>
-            </BorderPane>
-         </right>
-      </BorderPane>
+               </GridPane></center>
+            <right>
+               <BorderPane>
+                  <center>
+                     <Button fx:id="deleteLast" text="del"></Button>
+                  </center>
+               </BorderPane>
+            </right>
+         </BorderPane>
       </VBox>
    </center>
 </BorderPane>
+        <?import javafx.scene.control.Label?>
 
+<!--<AnchorPane fx:controller="ru.kpfu.itis.controllers.QuestionController"-->
+            <!--fx:id="background" maxHeight="-Infinity"-->
+            <!--maxWidth="-Infinity" minHeight="-Infinity"-->
+            <!--minWidth="-Infinity" prefHeight="570.0"-->
+            <!--prefWidth="570.0" style="-fx-background-color: #181e2b;"-->
+            <!--xmlns:fx="http://javafx.com/fxml">-->
 
-
-<?import javafx.scene.control.Label?>
-
-<AnchorPane fx:controller="ru.kpfu.itis.controllers.QuestionController"
-            fx:id="background" maxHeight="-Infinity"
-            maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="570.0"
-            prefWidth="570.0" style="-fx-background-color: #181e2b;"
-            xmlns:fx="http://javafx.com/fxml">
-
-   <children>
-      <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="313.0" layoutX="135.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
-      </ImageView>
-      <AnchorPane layoutX="-1.0" prefHeight="66.0" prefWidth="570.0" style="-fx-background-color: #fafafa;" />
-      <Button onAction="#check"  layoutX="214.0" layoutY="492.0"
-              mnemonicParsing="false" prefHeight="35.0"
-              prefWidth="142.0" style="-fx-background-color: #006400;"
-              text="готово" textFill="WHITE">
-         <font>
-            <Font name="Courier New Bold" size="20.0" />
-         </font>
-      </Button>
-      <Label fx:id="messageLabel"/>
-      <TextField fx:id="answer" layoutX="149.0" layoutY="435.0" prefHeight="26.0" prefWidth="281.0" />
-   </children>
-    <children>
-        <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="313.0" layoutX="135.0" layoutY="104.0"
-                   pickOnBounds="true" preserveRatio="true">
-        </ImageView>
-        <AnchorPane layoutX="-1.0" prefHeight="66.0" prefWidth="570.0" style="-fx-background-color: #fafafa;"/>
-        <Button fx:id="answerButton" layoutX="214.0" layoutY="492.0"
-                mnemonicParsing="false" prefHeight="35.0"
-                prefWidth="142.0" style="-fx-background-color: #006400;"
-                text="готово" textFill="WHITE">
-            <font>
-                <Font name="Courier New Bold" size="20.0"/>
-            </font>
-        </Button>
-        <TextField fx:id="answer" layoutX="149.0" layoutY="435.0" prefHeight="26.0" prefWidth="281.0"/>
-    </children>
-</AnchorPane>
+<!--<children>-->
+   <!--<ImageView fx:id="imageView1" fitHeight="300.0" fitWidth="313.0" layoutX="135.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">-->
+   <!--</ImageView>-->
+   <!--<AnchorPane layoutX="-1.0" prefHeight="66.0" prefWidth="570.0" style="-fx-background-color: #fafafa;" />-->
+   <!--<Button onAction="#check"  layoutX="214.0" layoutY="492.0"-->
+           <!--mnemonicParsing="false" prefHeight="35.0"-->
+           <!--prefWidth="142.0" style="-fx-background-color: #006400;"-->
+           <!--text="готово" textFill="WHITE">-->
+      <!--<font>-->
+         <!--<Font name="Courier New Bold" size="20.0" />-->
+      <!--</font>-->
+   <!--</Button>-->
+   <!--<Label fx:id="messageLabel"/>-->
+   <!--<TextField fx:id="answer1" layoutX="149.0" layoutY="435.0" prefHeight="26.0" prefWidth="281.0" />-->
+<!--</children>-->
+<!--<children>-->
+   <!--<ImageView fx:id="imageView2" fitHeight="300.0" fitWidth="313.0" layoutX="135.0" layoutY="104.0"-->
+              <!--pickOnBounds="true" preserveRatio="true">-->
+   <!--</ImageView>-->
+   <!--<AnchorPane layoutX="-1.0" prefHeight="66.0" prefWidth="570.0" style="-fx-background-color: #fafafa;"/>-->
+   <!--<Button fx:id="answerButton" layoutX="214.0" layoutY="492.0"-->
+           <!--mnemonicParsing="false" prefHeight="35.0"-->
+           <!--prefWidth="142.0" style="-fx-background-color: #006400;"-->
+           <!--text="готово" textFill="WHITE">-->
+      <!--<font>-->
+         <!--<Font name="Courier New Bold" size="20.0"/>-->
+      <!--</font>-->
+   <!--</Button>-->
+   <!--<TextField fx:id="answer" layoutX="149.0" layoutY="435.0" prefHeight="26.0" prefWidth="281.0"/>-->
+<!--</children>-->
+<!--</AnchorPane>-->
 
