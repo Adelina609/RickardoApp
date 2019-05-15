@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static java.lang.System.exit;
+
 @Component
 public class HomeController implements Initializable {
 
@@ -25,12 +27,17 @@ public class HomeController implements Initializable {
     private Label TitleLabel;
 
     @FXML
-    private Button goButton;
+    private Button beginButton;
+
+    @FXML
+    private Button exitButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        goButton.setOnAction(event -> {
-            goButton.getScene().getWindow().hide();
+        //Кнопка "Начать игру" (предлагайте смешные альтернативы)
+        //Пока без сохранений, да?
+        beginButton.setOnAction(event -> {
+            beginButton.getScene().getWindow().hide();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/question.fxml"));
             fxmlLoader.setControllerFactory(springContext::getBean);
             try {
@@ -42,6 +49,12 @@ public class HomeController implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+        });
+        //Кнопка "Выход"
+        exitButton.setOnAction(event -> {
+            exit(0);
+
         });
     }
 }

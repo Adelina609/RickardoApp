@@ -6,17 +6,18 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kpfu.itis.controllers.HomeController">
-   <children>
-      <Label fx:id="TitleLabel" alignment="CENTER" contentDisplay="TOP" layoutX="128.0" layoutY="33.0" prefHeight="87.0" prefWidth="342.0" style="-fx-background-color: #fafafa;" text="4 ФОТО 1 СЛОВО" textAlignment="CENTER">
-         <font>
-            <Font name="Games [RUS by Daymarius]" size="35.0" />
-         </font>
-      </Label>
-      <Button fx:id="goButton" layoutX="180.0" layoutY="200.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="237.0" text="Поехали!">
-         <font>
-            <Font name="Games [RUS by Daymarius]" size="30.0" />
-         </font>
-      </Button>
-   </children>
-</AnchorPane>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kpfu.itis.controllers.HomeController" id="base">
+    <stylesheets>
+       <URL value="@css/common.css" />
+       <URL value="@css/buttons.css" />
+    </stylesheets>
+         <center>
+            <VBox id="menu">
+               <Button fx:id = "beginButton" id="menu_button"  text="Начать игру"></Button>
+               <Button fx:id = "exitButton" id = "menu_button" text="Выход"></Button>
+            </VBox>
+         </center>
+</BorderPane>
