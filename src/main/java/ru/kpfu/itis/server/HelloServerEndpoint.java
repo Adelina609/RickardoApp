@@ -16,8 +16,7 @@ import javax.websocket.server.ServerEndpoint;
 @ComponentScan("ru.kpfu.itis.services")
 public class HelloServerEndpoint {
 
-    @Autowired
-    private QuestionService questionService;
+    private QuestionService questionService = new QuestionService();
 
     private static final Logger log = LoggerFactory.getLogger(HelloServerEndpoint.class);
 
@@ -26,8 +25,10 @@ public class HelloServerEndpoint {
         log.debug("HelloServer received request for: " + message + " being processed for session " + session.getId());
 
         //здесь вызываем метод проверки слова и если правильно то возвращаем тру, если нет то фолс
-
-//        questionService.getAll().get(0).getAnswer().equals(message);
+        System.out.println(questionService.getExistQuestion().getAnswer());
+        if (questionService.getExistQuestion().getAnswer().equals(message)){
+            return true;
+        }
         return false;
     }
 

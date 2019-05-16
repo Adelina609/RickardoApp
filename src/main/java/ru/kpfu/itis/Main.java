@@ -10,7 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import ru.kpfu.itis.repository.QuestionRepository;
 import ru.kpfu.itis.server.HelloServer;
+import ru.kpfu.itis.services.QuestionService;
 
 import javax.websocket.DeploymentException;
 
@@ -26,6 +28,8 @@ public class Main extends Application {
 
     private HelloServer server;
 
+    private QuestionService questionService;
+
     @Override
     public void init() throws Exception {
         server = new HelloServer();
@@ -33,6 +37,9 @@ public class Main extends Application {
         springContext = SpringApplication.run(Main.class);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/home.fxml"));
         fxmlLoader.setControllerFactory(springContext::getBean);
+//        springContext.getBean(QuestionRepository.class);
+        questionService = new QuestionService();
+        questionService.addAll();
         root = fxmlLoader.load();
     }
 

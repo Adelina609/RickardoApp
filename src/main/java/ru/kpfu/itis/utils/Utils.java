@@ -7,13 +7,13 @@ import java.util.List;
 
 public class Utils {
 
-    private static List<Question> questions = new ArrayList<>();
-
-    //TODO захардкодить вопросы
-
-    public static List<Question> fillQuestions(){
-
-        questions.add(new Question("", "answer"));
-        return questions;
-    }
+//    private static List<Question> questions = new ArrayList<>();
+//
+//    //TODO захардкодить вопросы
+//
+//    public static List<Question> fillQuestions(){
+//
+//        questions.add(new Question(, "answer"));
+//        return questions;
+//    }
 }

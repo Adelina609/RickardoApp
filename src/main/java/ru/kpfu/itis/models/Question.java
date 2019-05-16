@@ -4,23 +4,19 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "questions")
 public class Question {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
-    @NotNull
     private String img;
 
     private String answer;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -40,7 +36,8 @@ public class Question {
         this.answer = answer;
     }
 
-    public Question(@NotNull String img, @NotNull String answer) {
+    public Question(int id, String img, String answer) {
+        this.id = id;
         this.img = img;
         this.answer = answer;
     }

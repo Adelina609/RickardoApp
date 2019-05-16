@@ -15,22 +15,28 @@ import java.util.List;
 @Service
 public class QuestionService {
 
-//    @Autowired
-//    private QuestionRepository questionRepository;
-//
-//    public Question getQuestion(Long id){
-//        return questionRepository.findById(id).get();
-//    }
-//
-//    public void save(Question question){
-//        questionRepository.save(question);
-//    }
-//
-//    //experimental
+    static Question existQuestion;
+
+    private QuestionRepository questionRepository = new QuestionRepository();
+
+    public Question getNewQuestion(){
+        existQuestion = questionRepository.getQuestion();
+        return existQuestion;
+    }
+
+
+    public Question getExistQuestion(){
+        return existQuestion;
+    }
+
+    public void addAll(){
+        questionRepository.addAll();
+    }
+    //experimental
 //    public List<Question> getAll(){
 //        return Utils.fillQuestions();
 //    }
-
+//
 //    public boolean isRightAnswer(Long id, String answer){
 //        Question questionFromRepo = getQuestion(id);
 //        return questionFromRepo

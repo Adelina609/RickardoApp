@@ -28,6 +28,9 @@ import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
+import ru.kpfu.itis.models.Question;
+import ru.kpfu.itis.repository.QuestionRepository;
+import ru.kpfu.itis.services.QuestionService;
 
 
 import java.awt.*;
@@ -41,6 +44,10 @@ public class QuestionController implements Initializable {
     private static final Logger log = LoggerFactory.getLogger(QuestionController.class);
 
     private HelloService helloService = new HelloService();
+
+    private Question q = null;
+
+    private QuestionService service = new QuestionService();
 
     @Autowired
     ConfigurableApplicationContext springContext;
@@ -79,7 +86,8 @@ public class QuestionController implements Initializable {
 
     private void update(int lvl, int stg) {
         //Тут взависимости от lvl и stg грузим нужную картинку и слово из массива
-        File file = new File("src/main/assets/img/1question.png");
+        q = service.getNewQuestion();
+        File file = new File(q.getImg());
         Image image = new Image(file.toURI().toString());
         imageView.setImage(image);
 
@@ -112,10 +120,12 @@ public class QuestionController implements Initializable {
 
         helloService.setOnSucceeded(event -> {
             FXMLLoader fxmlLoader = null;
+            boolean flag = false;
             if (helloService.getValue().equals("true")){
                 //вызов успешного модального окна
                 System.out.println("true");
                 fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/correctModal.fxml"));
+                flag = true;
             } else{
                 //вызов неуспешного модального окна
                 System.out.println("false");
@@ -130,6 +140,9 @@ public class QuestionController implements Initializable {
                 stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
+            }
+            if(flag){
+                update(1,1);
             }
         });
 
