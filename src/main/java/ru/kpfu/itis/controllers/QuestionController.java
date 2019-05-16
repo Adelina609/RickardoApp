@@ -185,9 +185,12 @@ public class QuestionController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         graphicsContext= canvas.getGraphicsContext2D();
         graphicsContext.setFont(Font.font("Verdana", 25.0));
+        //menuButton.getScene().getWindow().setHeight(700);
+//        menuButton.getScene().getWindow().setWidth(700);
         word = "";
         canvas.setHeight(50);
         canvas.setWidth(500);
+
 
 
         //Подгружаем картинку (надо будет создать отдельный метод для этого)

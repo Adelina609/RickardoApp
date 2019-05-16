@@ -1,32 +1,28 @@
 package ru.kpfu.itis.services;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import ru.kpfu.itis.models.Question;
 import ru.kpfu.itis.repository.QuestionRepository;
-import ru.kpfu.itis.utils.Utils;
-
-import java.util.List;
 
 @ComponentScan("ru.kpfu.itis.models")
 @ComponentScan("ru.kpfu.itis.repository")
 @Service
 public class QuestionService {
 
-    static Question existQuestion;
+    private static Question existingQuestion;
 
     private QuestionRepository questionRepository = new QuestionRepository();
 
     public Question getNewQuestion(){
-        existQuestion = questionRepository.getQuestion();
-        return existQuestion;
+        existingQuestion = questionRepository.getQuestion();
+        return existingQuestion;
     }
 
-
     public Question getExistQuestion(){
-        return existQuestion;
+        return existingQuestion;
     }
 
     public void addAll(){

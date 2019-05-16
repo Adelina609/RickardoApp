@@ -7,13 +7,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import ru.kpfu.itis.repository.QuestionRepository;
 import ru.kpfu.itis.server.HelloServer;
 import ru.kpfu.itis.services.QuestionService;
 
+import javax.annotation.PostConstruct;
 import javax.websocket.DeploymentException;
 
 @SpringBootApplication
@@ -49,8 +52,8 @@ public class Main extends Application {
         log.info("Starting Hello JavaFX WebSocket demonstration application");
         log.debug("Loading FXML for main view");
 
-        stage.setMaxHeight(800);
-        stage.setMaxHeight(800);
+        stage.setHeight(700);
+        stage.setWidth(700);
         stage.setTitle("Игра");
         stage.setScene(new Scene(root));
         stage.show();
