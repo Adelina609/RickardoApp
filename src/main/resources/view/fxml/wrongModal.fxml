@@ -9,16 +9,19 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import java.net.URL?>
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kpfu.itis.controllers.ModalController" id="modal">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kpfu.itis.controllers.ModalController" id="wrong">
     <stylesheets>
-        <URL value="@css/common.css" />
         <URL value="@css/buttons.css" />
-        <URL value="@css/wrong.css" />
+        <URL value="@css/modal.css" />
+        <URL value="@css/common.css" />
     </stylesheets>
     <bottom>
         <BorderPane>
             <center>
-                <Button fx:id="actionButton" text="лан го еще раз" id="menu_button"></Button>
+                <VBox style="-fx-alignment: center">
+                    <Button fx:id="actionButton" text="Неудача! Попробуй снова" id="but"></Button>
+                    <Label id="separator" style="-fx-fill-height: 10"></Label></VBox>
+
             </center>
         </BorderPane>
 

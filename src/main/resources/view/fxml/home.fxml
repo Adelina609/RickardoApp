@@ -9,15 +9,17 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import java.net.URL?>
+<?import javafx.scene.layout.Pane?>
 <BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kpfu.itis.controllers.HomeController" id="base">
     <stylesheets>
-       <URL value="@css/common.css" />
-       <URL value="@css/buttons.css" />
+        <URL value="@css/common.css" />
+        <URL value="@css/buttons.css" />
     </stylesheets>
-         <center>
-            <VBox id="menu">
-               <Button fx:id = "beginButton" id="menu_button"  text="Начать игру"></Button>
-               <Button fx:id = "exitButton" id = "menu_button" text="Выход"></Button>
-            </VBox>
-         </center>
+    <center>
+        <VBox id="menu">
+            <Button fx:id = "beginButton" id="but"  text="Начать игру" prefWidth="500"></Button>
+            <Label id="separator" style="-fx-fill-height: 600;"></Label>
+            <Button fx:id = "exitButton" id = "but" text="Выход" prefWidth="500"></Button>
+        </VBox>
+    </center>
 </BorderPane>

@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -18,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
 
 import javafx.scene.layout.GridPane;
 
+import javafx.scene.text.Font;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -45,25 +48,32 @@ public class QuestionController implements Initializable {
 
     private HelloService helloService = new HelloService();
 
-    private Question q = null;
+    private String word;
 
     private QuestionService service = new QuestionService();
+
+    private Question q;
 
     @Autowired
     ConfigurableApplicationContext springContext;
 
     @FXML
-    private ImageView imageView;
+    private ImageView pic1, pic2, pic3, pic4;
 
     @FXML
 
     private Button deleteLast, menuButton, level, stage;
 
-    @FXML
-    private TextField answerField;
 
     @FXML
     private Button[] letters;
+
+    @FXML
+    private Canvas canvas;
+
+    @FXML
+    private Label messageLabel;
+
 
     @FXML
     private Button letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8,
@@ -81,15 +91,26 @@ public class QuestionController implements Initializable {
     }
     //Опустошить поле ввода (когда рестартается уровень, например)
     private void clearAnswerField () {
-        answerField.setText("");
+        //answerField.setText("");
+        graphicsContext.clearRect(0, 0, 1000, 1000);
     }
 
     private void update(int lvl, int stg) {
         //Тут взависимости от lvl и stg грузим нужную картинку и слово из массива
         q = service.getNewQuestion();
-        File file = new File(q.getImg());
-        Image image = new Image(file.toURI().toString());
-        imageView.setImage(image);
+        File file1 = new File(q.getImg1());
+        File file2 = new File(q.getImg2());
+        File file3 = new File(q.getImg3());
+        File file4 = new File(q.getImg4());
+
+        pic1.setImage(new Image(file1.toURI().toString()));
+        pic2.setImage(new Image(file2.toURI().toString()));
+        pic3.setImage(new Image(file3.toURI().toString()));
+        pic4.setImage(new Image(file4.toURI().toString()));
+
+        setLevel(lvl);
+        setStage(stg);
+        clearAnswerField();
 
 
         setLevel(lvl);
@@ -114,7 +135,7 @@ public class QuestionController implements Initializable {
 
     @FXML
     private void check(){
-        helloService.setName(answerField.getText());
+        helloService.setName(word);
 
 
 
@@ -144,6 +165,8 @@ public class QuestionController implements Initializable {
             if(flag){
                 update(1,1);
             }
+            graphicsContext.clearRect(0, 0, 1000, 1000);
+            word = "";
         });
 
         helloService.setOnFailed(event ->
@@ -157,8 +180,16 @@ public class QuestionController implements Initializable {
 
     }
 
+    GraphicsContext graphicsContext;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        graphicsContext= canvas.getGraphicsContext2D();
+        graphicsContext.setFont(Font.font("Verdana", 25.0));
+        word = "";
+        canvas.setHeight(50);
+        canvas.setWidth(500);
+
+
         //Подгружаем картинку (надо будет создать отдельный метод для этого)
         update(1, 1);
 
@@ -166,7 +197,9 @@ public class QuestionController implements Initializable {
         deleteLast.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                answerField.setText(answerField.getText().substring(0, answerField.getText().length() - 1));
+                word = word.substring(0, word.length() - 1);
+                graphicsContext.clearRect(0, 0, 1000, 1000);
+                graphicsContext.strokeText(word, 30, 35);
             }
         });
 
@@ -182,15 +215,19 @@ public class QuestionController implements Initializable {
                     Stage stage = new Stage();
                     stage.setTitle("Главное меню");
                     stage.setScene(new Scene(root));
+                    stage.setMinHeight(800);
+                    stage.setMinWidth(800);
                     stage.show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
-                }
+            }
 
         });
 
+        //Кнопка "Проверить" с подтверждением ответа, поверх игрового, появляется модальное окно
+        //надо внутри использовать метод с проверкой слова и только потом выбрать, какое модальное окно отразить
 
         //Наша клавиатура
         letters = new Button[] {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8,
@@ -202,10 +239,12 @@ public class QuestionController implements Initializable {
             but.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent event) {
-                    answerField.setText(answerField.getText() + but.getText());
+                    word = word + but.getText();
+                    graphicsContext.clearRect(0, 0, 1000, 1000);
+                    graphicsContext.strokeText(word, 30, 30);
                 }
             });
         }
-        }
+    }
 
     }

@@ -34,12 +34,7 @@ public class ModalController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //нажали на единственную кнопочку на модальном окне
         actionButton.setOnAction(event -> {
-            if (actionButton.getText().equals("лан го еще раз")) {
-                actionButton.getScene().getWindow().hide();
-            }
-            if (actionButton.getText().equals("я молорик")) {
-                actionButton.getScene().getWindow().hide();
-            }
+            actionButton.getScene().getWindow().hide();
         });
     }
 }

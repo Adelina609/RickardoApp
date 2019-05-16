@@ -37,6 +37,7 @@ public class Main extends Application {
         springContext = SpringApplication.run(Main.class);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/home.fxml"));
         fxmlLoader.setControllerFactory(springContext::getBean);
+
 //        springContext.getBean(QuestionRepository.class);
         questionService = new QuestionService();
         questionService.addAll();
@@ -48,6 +49,8 @@ public class Main extends Application {
         log.info("Starting Hello JavaFX WebSocket demonstration application");
         log.debug("Loading FXML for main view");
 
+        stage.setMaxHeight(800);
+        stage.setMaxHeight(800);
         stage.setTitle("Игра");
         stage.setScene(new Scene(root));
         stage.show();
