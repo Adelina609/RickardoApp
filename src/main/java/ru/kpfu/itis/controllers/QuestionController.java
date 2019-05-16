@@ -50,20 +50,13 @@ public class QuestionController implements Initializable {
 
     @FXML
 
-    private Button submitButton, deleteLast, menuButton, level, stage;
+    private Button deleteLast, menuButton, level, stage;
 
     @FXML
     private TextField answerField;
 
     @FXML
     private Button[] letters;
-
-    @FXML
-    private TextField answer;
-
-    @FXML
-    private Label messageLabel;
-
 
     @FXML
     private Button letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8,
@@ -113,14 +106,30 @@ public class QuestionController implements Initializable {
 
     @FXML
     private void check(){
-        messageLabel.setText("");
-        helloService.setName(answer.getText());
+        helloService.setName(answerField.getText());
+
+
 
         helloService.setOnSucceeded(event -> {
+            FXMLLoader fxmlLoader = null;
             if (helloService.getValue().equals("true")){
                 //вызов успешного модального окна
+                System.out.println("true");
+                fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/correctModal.fxml"));
             } else{
                 //вызов неуспешного модального окна
+                System.out.println("false");
+                fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/wrongModal.fxml"));
+            }
+            fxmlLoader.setControllerFactory(springContext::getBean);
+            try {
+                Parent root = fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setTitle("yoyoyoyoyo broooo");
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
 
@@ -169,26 +178,6 @@ public class QuestionController implements Initializable {
 
         });
 
-        //Кнопка "Проверить" с подтверждением ответа, поверх игрового, появляется модальное окно
-        //надо внутри использовать метод с проверкой слова и только потом выбрать, какое модальное окно отразить
-        submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/correctModal.fxml"));
-                fxmlLoader.setControllerFactory(springContext::getBean);
-                try {
-                    Parent root = fxmlLoader.load();
-                    Stage stage = new Stage();
-                    stage.setTitle("yoyoyoyoyo broooo");
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            }
-            });
 
         //Наша клавиатура
         letters = new Button[] {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8,

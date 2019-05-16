@@ -14,7 +14,6 @@ public class Question {
     @NotNull
     private String img;
 
-    @NotNull
     private String answer;
 
     public Long getId() {

@@ -26,7 +26,9 @@ public class HelloServerEndpoint {
         log.debug("HelloServer received request for: " + message + " being processed for session " + session.getId());
 
         //здесь вызываем метод проверки слова и если правильно то возвращаем тру, если нет то фолс
-        return questionService.getAll().get(0).getAnswer().equals(message);
+
+//        questionService.getAll().get(0).getAnswer().equals(message);
+        return false;
     }
 
     @OnError

@@ -36,7 +36,7 @@
       <VBox id="centered">
          <ImageView fx:id="imageView" id="picture" fitHeight="400" fitWidth="400">
          </ImageView>
-         <Button fx:id="submitButton" text="Проверить"> </Button>
+         <Button onAction="#check" text="Проверить"> </Button>
          <TextField fx:id="answerField" prefWidth="100" text=""></TextField>
          <BorderPane>
             <center>
@@ -91,7 +91,7 @@
       </VBox>
    </center>
 </BorderPane>
-        <?import javafx.scene.control.Label?>
+        <!--<?import javafx.scene.control.Label?>-->
 
 <!--<AnchorPane fx:controller="ru.kpfu.itis.controllers.QuestionController"-->
             <!--fx:id="background" maxHeight="-Infinity"-->

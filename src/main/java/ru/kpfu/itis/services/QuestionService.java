@@ -17,7 +17,7 @@ public class QuestionService {
 
 //    @Autowired
 //    private QuestionRepository questionRepository;
-
+//
 //    public Question getQuestion(Long id){
 //        return questionRepository.findById(id).get();
 //    }
@@ -25,11 +25,11 @@ public class QuestionService {
 //    public void save(Question question){
 //        questionRepository.save(question);
 //    }
-
-    //experimental
-    public List<Question> getAll(){
-        return Utils.fillQuestions();
-    }
+//
+//    //experimental
+//    public List<Question> getAll(){
+//        return Utils.fillQuestions();
+//    }
 
 //    public boolean isRightAnswer(Long id, String answer){
 //        Question questionFromRepo = getQuestion(id);
