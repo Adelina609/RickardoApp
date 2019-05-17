@@ -28,14 +28,4 @@ public class QuestionService {
     public void addAll(){
         questionRepository.addAll();
     }
-    //experimental
-//    public List<Question> getAll(){
-//        return Utils.fillQuestions();
-//    }
-//
-//    public boolean isRightAnswer(Long id, String answer){
-//        Question questionFromRepo = getQuestion(id);
-//        return questionFromRepo
-//                .getAnswer().equals(answer);
-//    }
 }

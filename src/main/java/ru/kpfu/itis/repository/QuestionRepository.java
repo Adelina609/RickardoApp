@@ -1,12 +1,9 @@
 package ru.kpfu.itis.repository;
 
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import ru.kpfu.itis.models.Question;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class QuestionRepository {

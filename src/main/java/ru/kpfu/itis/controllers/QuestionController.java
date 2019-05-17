@@ -1,7 +1,5 @@
 package ru.kpfu.itis.controllers;
 
-
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,32 +9,20 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-
-import javafx.scene.layout.GridPane;
-
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-import ru.kpfu.itis.client.HelloService;
-
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
+import ru.kpfu.itis.client.HelloService;
 import ru.kpfu.itis.models.Question;
-import ru.kpfu.itis.repository.QuestionRepository;
 import ru.kpfu.itis.services.QuestionService;
 
-
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -61,9 +47,7 @@ public class QuestionController implements Initializable {
     private ImageView pic1, pic2, pic3, pic4;
 
     @FXML
-
     private Button deleteLast, menuButton, level, stage;
-
 
     @FXML
     private Button[] letters;
@@ -72,14 +56,12 @@ public class QuestionController implements Initializable {
     private Canvas canvas;
 
     @FXML
-    private Label messageLabel;
-
-
-    @FXML
     private Button letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8,
             letter9, letter10, letter11, letter12, letter13, letter14, letter15, letter16,
             letter17, letter18, letter19, letter20, letter21, letter22, letter23, letter24,
             letter25, letter26, letter27, letter28, letter29, letter30, letter31, letter32;
+
+    private static int levelCounter = 2;
 
     //Устанавливаем надпись с номером уровня
     private void setLevel (int lvl) {
@@ -91,7 +73,6 @@ public class QuestionController implements Initializable {
     }
     //Опустошить поле ввода (когда рестартается уровень, например)
     private void clearAnswerField () {
-        //answerField.setText("");
         graphicsContext.clearRect(0, 0, 1000, 1000);
     }
 
@@ -116,28 +97,11 @@ public class QuestionController implements Initializable {
         setLevel(lvl);
         setStage(stg);
         clearAnswerField();
-
-//        answerButton.setOnAction(event -> {
-//            Stage stage = new Stage();
-//            stage.initModality(Modality.APPLICATION_MODAL);
-//            Parent newWindow;
-//            try {
-//                //указать путь к новому окошку с рикардо
-//                newWindow = FXMLLoader.load(getClass().getResource("/view/fxml/home.fxml"));
-//                Scene scene = new Scene(newWindow);
-//                stage.setScene(scene);
-//                stage.showAndWait();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        });
     }
 
     @FXML
     private void check(){
         helloService.setName(word);
-
-
 
         helloService.setOnSucceeded(event -> {
             FXMLLoader fxmlLoader = null;
@@ -157,13 +121,14 @@ public class QuestionController implements Initializable {
                 Parent root = fxmlLoader.load();
                 Stage stage = new Stage();
                 stage.setTitle("yoyoyoyoyo broooo");
-                stage.setScene(new Scene(root));
+                stage.setScene(new Scene(root, 600, 600));
+                stage.setMaximized(true);
                 stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
             if(flag){
-                update(1,1);
+                update(levelCounter++,1);
             }
             graphicsContext.clearRect(0, 0, 1000, 1000);
             word = "";
@@ -180,30 +145,22 @@ public class QuestionController implements Initializable {
 
     }
 
-    GraphicsContext graphicsContext;
+    private GraphicsContext graphicsContext;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         graphicsContext= canvas.getGraphicsContext2D();
         graphicsContext.setFont(Font.font("Verdana", 25.0));
-        //menuButton.getScene().getWindow().setHeight(700);
-//        menuButton.getScene().getWindow().setWidth(700);
         word = "";
         canvas.setHeight(50);
         canvas.setWidth(500);
 
-
-
-        //Подгружаем картинку (надо будет создать отдельный метод для этого)
         update(1, 1);
 
         //Кнопка 'del' правее от букв, удаляет последний символ в строке
-        deleteLast.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                word = word.substring(0, word.length() - 1);
-                graphicsContext.clearRect(0, 0, 1000, 1000);
-                graphicsContext.strokeText(word, 30, 35);
-            }
+        deleteLast.setOnMouseClicked(event -> {
+            word = word.substring(0, word.length() - 1);
+            graphicsContext.clearRect(0, 0, 1000, 1000);
+            graphicsContext.strokeText(word, 30, 35);
         });
 
         //Возвращение в главное меню, правый верхний угол игрового экрана
@@ -230,7 +187,6 @@ public class QuestionController implements Initializable {
         });
 
         //Кнопка "Проверить" с подтверждением ответа, поверх игрового, появляется модальное окно
-        //надо внутри использовать метод с проверкой слова и только потом выбрать, какое модальное окно отразить
 
         //Наша клавиатура
         letters = new Button[] {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8,
@@ -239,13 +195,10 @@ public class QuestionController implements Initializable {
                 letter25, letter26, letter27, letter28, letter29, letter30, letter31, letter32};
         //абилки для нашей клавиатуры
         for (Button but : letters) {
-            but.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent event) {
-                    word = word + but.getText();
-                    graphicsContext.clearRect(0, 0, 1000, 1000);
-                    graphicsContext.strokeText(word, 30, 30);
-                }
+            but.setOnMouseClicked(event -> {
+                word = word + but.getText();
+                graphicsContext.clearRect(0, 0, 1000, 1000);
+                graphicsContext.strokeText(word, 30, 30);
             });
         }
     }

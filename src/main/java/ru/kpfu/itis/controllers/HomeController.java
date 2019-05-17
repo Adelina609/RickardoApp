@@ -6,7 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -24,9 +23,6 @@ public class HomeController implements Initializable {
     ConfigurableApplicationContext springContext;
 
     @FXML
-    private Label TitleLabel;
-
-    @FXML
     private Button beginButton;
 
     @FXML
@@ -34,8 +30,7 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //Кнопка "Начать игру" (предлагайте смешные альтернативы)
-        //Пока без сохранений, да?
+        //Кнопка "Начать игру"
         beginButton.setOnAction(event -> {
             beginButton.getScene().getWindow().hide();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/question.fxml"));
@@ -45,6 +40,7 @@ public class HomeController implements Initializable {
                 Stage stage = new Stage();
                 stage.setTitle("Игра началась!");
                 stage.setScene(new Scene(root));
+                stage.setMaximized(true);
                 stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
