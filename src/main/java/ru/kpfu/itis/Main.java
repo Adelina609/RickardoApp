@@ -12,6 +12,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 import ru.kpfu.itis.repository.QuestionRepository;
 import ru.kpfu.itis.server.HelloServer;
 import ru.kpfu.itis.services.QuestionService;
@@ -31,6 +32,7 @@ public class Main extends Application {
 
     private HelloServer server;
 
+    @Autowired
     private QuestionService questionService;
 
     @Override
@@ -40,7 +42,7 @@ public class Main extends Application {
         springContext = SpringApplication.run(Main.class);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/fxml/home.fxml"));
         fxmlLoader.setControllerFactory(springContext::getBean);
-        questionService = new QuestionService();
+        questionService = springContext.getBean(QuestionService.class);
         questionService.addAll();
         root = fxmlLoader.load();
     }

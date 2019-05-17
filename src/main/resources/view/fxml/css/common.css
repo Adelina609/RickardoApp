@@ -1,6 +1,6 @@
 #base {
-    -fx-min-width: 600;
-    -fx-min-height: 600;
+    -fx-min-width: 500;
+    -fx-min-height: 500;
     -fx-background-image: url("https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Simple-Background-Images-21.png");
 
     -fx-background-size: cover, auto;

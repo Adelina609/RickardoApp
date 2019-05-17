@@ -1,6 +1,8 @@
 package ru.kpfu.itis.services;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -11,12 +13,16 @@ import ru.kpfu.itis.repository.QuestionRepository;
 @ComponentScan("ru.kpfu.itis.repository")
 @Service
 public class QuestionService {
+    @Autowired
+    ConfigurableApplicationContext springContext;
 
     private static Question existingQuestion;
 
-    private QuestionRepository questionRepository = new QuestionRepository();
+    @Autowired
+    private QuestionRepository questionRepository;
 
     public Question getNewQuestion(){
+        questionRepository = springContext.getBean(QuestionRepository.class);
         existingQuestion = questionRepository.getQuestion();
         return existingQuestion;
     }

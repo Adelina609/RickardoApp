@@ -32,11 +32,13 @@ import java.util.ResourceBundle;
 public class QuestionController implements Initializable {
     private static final Logger log = LoggerFactory.getLogger(QuestionController.class);
 
-    private HelloService helloService = new HelloService();
+    @Autowired
+    private HelloService helloService;
 
     private String word;
 
-    private QuestionService service = new QuestionService();
+    @Autowired
+    private QuestionService service;
 
     private Question q;
 
@@ -122,13 +124,12 @@ public class QuestionController implements Initializable {
                 Stage stage = new Stage();
                 stage.setTitle("yoyoyoyoyo broooo");
                 stage.setScene(new Scene(root, 600, 600));
-                stage.setMaximized(true);
                 stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
             if(flag){
-                update(levelCounter++,1);
+                update(1,levelCounter++);
             }
             graphicsContext.clearRect(0, 0, 1000, 1000);
             word = "";

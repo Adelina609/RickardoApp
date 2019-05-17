@@ -3,9 +3,11 @@ package ru.kpfu.itis.server;
 import org.glassfish.tyrus.server.Server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import ru.kpfu.itis.Main;
 import javax.websocket.DeploymentException;
 
+@Component
 public class HelloServer {
     private static final Logger log = LoggerFactory.getLogger(Main.class);
 
